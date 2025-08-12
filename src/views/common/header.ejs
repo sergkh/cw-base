@@ -6,3 +6,29 @@
     <link rel='stylesheet' href='/css/font-awesome.css' />
   </head>
   <body>
+
+
+
+  <header>  
+    <h1><%= title %></h1>
+    
+    <span>
+      <a href="/about">Про сайт</a>
+    </span>
+
+    <% if (locals.user) { %>
+      <span><i class="fa-solid fa-user"></i> <%= user.username %></span>
+    <% } %>
+
+    <% if (locals.user) { %>
+      <span>
+        <a href="/logout"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Вихід</a>
+      </span>
+    <% } else { %>
+      <span>
+        <a href="/login"> <i class="fa-solid fa-right-to-bracket"></i> Логін</a>
+        <a href="/signup"> <i class="fa-solid fa-user-plus"></i> Реєстрація</a>
+      </span>
+    <% } %>
+
+  </header>

@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const client = require('../client');
-require('express-async-errors');
 
 /* Відобразити форму логіну */
 router.get('/login', function(req, res) {  
@@ -57,8 +56,7 @@ router.post('/signup', async function(req, res) {
   const registration = {
     email, 
     username: email, 
-    password, 
-    confirmed: true
+    password
   }
 
   try {
@@ -89,7 +87,7 @@ router.post('/signup', async function(req, res) {
 });
 
 /* Вихід: видалення кукі */
-router.post('/logout', function(req, res) {
+router.get('/logout', function(req, res) {
   res.clearCookie('session')
      .redirect('/');
 });

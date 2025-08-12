@@ -8,7 +8,7 @@ async function parseAuth(req, res, next) {
   try {
     const userData = await client.get('users/me?populate=role', { headers: { Authorization: `Bearer ${session}` } });
     const user = userData.data;
-    user.role = user.role.name
+    user.role = (user.role) ? user.role.name : 'Guest';
     req.user = user
   } catch (e) {
     console.log('Error while parsing auth', e);

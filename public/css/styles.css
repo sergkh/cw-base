@@ -18,6 +18,15 @@ section {
   margin: 2rem;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0em 1em;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
 .button {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;

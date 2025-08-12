@@ -1,13 +1,14 @@
-<%- include('common/header', { title: title }); -%>
+<%- include('common/header', { title: title, user: locals.user }); -%>
 <main>
-  <section>  
-    <h1><%= title %></h1>
-    <p>
-      <a href="/login">Логін</a>
-    </p>
-    <p>
-      <a href="/signup">Реєстрація</a>
-    </p>
-  </section>
+  <% if (locals.items && locals.items.length > 0) { %>
+    <section>
+      <h2>Список обʼєктів</h2>
+      <ul>
+        <% items.forEach(item => { %>
+          <li><%= JSON.stringify(item) %></li>
+        <% }); %>
+      </ul>
+    </section>
+  <% } %>
 </main>
 <%- include('common/footer'); -%>
